@@ -19,6 +19,25 @@ export default {
         'manrope': ['Manrope', 'sans-serif'],
       }
     },
-  plugins: [],
+  },
+  plugins: [
+     function ({ addUtilities }) {
+      addUtilities({
+        ".scrollbar-hide": {
+          "scrollbar-width": "none", // Firefox
+          "-ms-overflow-style": "none", // IE/Edge
+        },
+        ".scrollbar-hide::-webkit-scrollbar": {
+          display: "none", // Chrome, Safari
+        },
+        '.vertical-trim': {
+          paddingTop: '0.25rem',
+          paddingBottom: '0.25rem',
+          marginTop: '-0.25rem',
+          marginBottom: '-0.25rem',
+        },
+                      
+      });
+    },
+  ],
 }
-};

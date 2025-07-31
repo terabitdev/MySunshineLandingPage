@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import StoryBehindModal from "../../Modal/StoryBehindModal";
 const FeaturesSection = () => {
   const features = [
     {
@@ -257,6 +258,11 @@ const TestimonialSection = () => {
 };
 
 const MySunshineLanding = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className="min-h-screen ">
       {/* Header Section */}
@@ -302,7 +308,10 @@ const MySunshineLanding = () => {
                   </p>
                 </div>
 
-                <button className="bg-[#4B7C6C] text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200 self-start">
+                <button 
+                  onClick={openModal}
+                  className="bg-[#4B7C6C] text-white font-semibold py-3 px-8 rounded-full transition-colors duration-200 self-start"
+                >
                   Read Full Story
                 </button>
               </div>
@@ -396,13 +405,18 @@ const MySunshineLanding = () => {
           </div>
         </div>
       </div>
+      
       {/* Features Section */}
       <FeaturesSection />
 
       {/* Empathetic Design Section */}
       <EmpatheticDesignSection />
-        {/* Testimonial Section */}
-        <TestimonialSection />
+      
+      {/* Testimonial Section */}
+      <TestimonialSection />
+      
+      {/* Modal - Rendered as overlay */}
+      {isModalOpen && <StoryBehindModal isOpen={isModalOpen} onClose={closeModal} />}
     </div>
   );
 };
