@@ -1,7 +1,98 @@
+/* David Libre Font Family */
 @font-face {
-  font-display: swap;
+  font-family: "David Libre";
+  src: url("/fonts/DavidLibre-Regular.ttf");
+  font-weight: 400;
   font-style: normal;
-  src: url("/fonts/OpenSansBold.ttf");
-  font-family: "Open Sans";
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "David Libre";
+  src: url("/fonts/DavidLibre-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "David Libre";
+  src: url("/fonts/DavidLibre-Bold.ttf");
   font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* InterTight Font Family */
+@font-face {
+  font-family: "InterTight";
+  src: url("/fonts/InterTight[wght].ttf");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "InterTight";
+  src: url("/fonts/InterTight-Italic[wght].ttf");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Manrope Font Family */
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope-ExtraLight.ttf");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope-ExtraBold.ttf");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
