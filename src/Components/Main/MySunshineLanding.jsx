@@ -266,7 +266,7 @@ const MySunshineLanding = () => {
   return (
     <div className="min-h-screen ">
       {/* Header Section */}
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto 2xl:mt-32 px-6 py-12">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-medium font-david-libre text-primaryDark mb-4">
             MySunshine - Helping You
