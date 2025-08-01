@@ -1,6 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
+  const handleLogoClick = () => {
+    navigate("/");
+  };
   return (
     <div className="   h-14 md:h-72 relative">
       <div className="relative w-full">
@@ -12,7 +17,8 @@ function Header() {
         <img
           src="/assets/Logo.svg"
           alt="Logo"
-          className="absolute top-3 md:top-12 left-1/2 transform -translate-x-1/2 h-12 md:h-40 w-auto"
+          onClick={handleLogoClick}
+          className="absolute top-3 md:top-12 left-1/2 transform -translate-x-1/2 h-12 md:h-40 w-auto cursor-pointer "
         />
       </div>
     </div>

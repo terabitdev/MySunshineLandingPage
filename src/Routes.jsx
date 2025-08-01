@@ -4,6 +4,7 @@ import MainPage from "./Pages/MainPage";
 import ArticlesPage from "./Pages/ArticlesPage";
 import ArticleDetails from "./Components/Articles/ArticleDetails";
 import TermsConditions from "./Pages/TermsConditions";
+import ScrollToTop from "./Components/ScrollToTop";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -24,6 +25,12 @@ const ProjectRoutes = () => {
       element: <TermsConditions />,
     }
   ]);
-  return element;
+  
+  return (
+    <>
+      <ScrollToTop />
+      {element}
+    </>
+  );
 };
 export default ProjectRoutes;

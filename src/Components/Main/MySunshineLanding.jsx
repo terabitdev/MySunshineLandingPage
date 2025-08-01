@@ -14,7 +14,7 @@ const MySunshineLanding = () => {
     <div>
       {/* Header Section */}
       <div className="container mx-auto px-6 pt-8 pb-12">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 2xl:mt-20">
           <h1 className="text-4xl md:text-6xl font-medium font-david-libre text-primaryDark mb-4">
             MySunshine - Helping You
             <br />
