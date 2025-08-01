@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="  h-14 md:h-64 relative">
+    <div className="   h-14 md:h-72 relative">
       <div className="relative w-full">
         <img
           src="/assets/bgimg.png"

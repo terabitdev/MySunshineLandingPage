@@ -11,10 +11,10 @@ const MySunshineLanding = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="min-h-screen ">
+    <div>
       {/* Header Section */}
-      <div className="container mx-auto 2xl:mt-32 px-6 py-12">
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-6 pt-8 pb-12">
+        <div className="text-center mb-8">
           <h1 className="text-4xl md:text-6xl font-medium font-david-libre text-primaryDark mb-4">
             MySunshine - Helping You
             <br />
@@ -78,7 +78,7 @@ const MySunshineLanding = () => {
 
       <div className="container max-w-7xl mx-auto px-6">
         {/* Problem & Solution Section */}
-        <div className="mb-20 font-manrope">
+        <div className="mb-12 font-manrope">
           <div className="bg-[#FAFAFA]  text-center py-4 rounded-full md:rounded-b-none md:rounded-t-3xl max-w-xs md:max-w-sm mx-auto ">
             <h2 className="text-center text-2xl md:text-3xl font-semibold md:font-extrabold text-primaryDark ">
               The Problem & Solution

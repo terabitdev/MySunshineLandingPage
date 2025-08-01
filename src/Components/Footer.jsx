@@ -1,6 +1,11 @@
 import React from "react";
-
+import { useNavigate } from "react-router";
 function Footer() {
+  const navigate = useNavigate();
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="bg-bg-primary text-center pt-20 pb-6">
       <div className="w-full flex flex-col justify-center items-center">
@@ -11,11 +16,19 @@ function Footer() {
           </h2>
         </div>
         <div className="flex items-center font-manrope space-x-4 mt-2">
-          <p className="text-[#0C130F] font-semibold text-[16px] ">
+          <p 
+            className="text-[#0C130F] font-semibold text-[16px] cursor-pointer"
+            onClick={() => handleNavigation("/terms-conditions")}
+          >
             Terms and Conditions
           </p>
           <div className="w-px h-5 bg-[#0000002E]"></div>
-          <p className="text-[#0C130F] font-semibold text-[16px]">Articles</p>
+          <p
+            className="text-[#0C130F] font-semibold text-[16px] cursor-pointer"
+            onClick={() => handleNavigation("/articles")}
+          >
+            Articles
+          </p>
         </div>
         <div className="flex items-center font-manrope space-x-4 mt-10">
           <img src="/assets/playstore.svg" className="h-10" alt="playstore" />
