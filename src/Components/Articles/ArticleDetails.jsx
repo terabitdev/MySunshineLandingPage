@@ -27,11 +27,11 @@ const ArticleDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-custom-page-gradient">
       <Header />
       {/* Navigation Breadcrumb */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className=" border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <button className="flex items-center text-gray-600 hover:text-gray-900 transition-colors">
             <ChevronLeft className="w-4 h-4 mr-1" />
             <span className="text-sm font-medium">All Articles</span>
@@ -39,7 +39,7 @@ const ArticleDetail = () => {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Hero Image */}
         <div className="relative mb-8 rounded-xl overflow-hidden shadow-lg">
           <img
@@ -78,13 +78,7 @@ const ArticleDetail = () => {
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
           {article.title}
         </h1>
-
-        {/* Article Excerpt */}
-        <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8 rounded-r-lg">
-          <p className="text-gray-700 text-lg leading-relaxed italic">
-            {article.excerpt}
-          </p>
-        </div>
+        
 
         {/* Key Topics */}
         <div className="mb-8">
@@ -110,29 +104,7 @@ const ArticleDetail = () => {
           </div>
         </div>
 
-        {/* Social Share & Actions */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-600 font-medium">Share this article:</span>
-              <div className="flex space-x-2">
-                <button className="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                  Twitter
-                </button>
-                <button className="bg-blue-800 text-white px-3 py-2 rounded-lg hover:bg-blue-900 transition-colors text-sm">
-                  Facebook
-                </button>
-                <button className="bg-blue-700 text-white px-3 py-2 rounded-lg hover:bg-blue-800 transition-colors text-sm">
-                  LinkedIn
-                </button>
-              </div>
-            </div>
-            
-            <button className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium">
-              Read Next Article
-            </button>
-          </div>
-        </div>
+        
 
         {/* Related Articles Section */}
         <div className="mt-16">
