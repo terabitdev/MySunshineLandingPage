@@ -4,11 +4,12 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 const TermsConditions = () => {
-  const [activeSection, setActiveSection] = useState("use-of-app");
+  const [activeSection, setActiveSection] = useState("all");
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const navigationItems = [
-    { id: "use-of-app", label: "Use of the App", active: true },
+    { id: "all", label: "All Topics", active: true },
+    { id: "use-of-app", label: "Use of the App", active: false },
     { id: "policy-terms", label: "Policy & Data", active: false },
     {
       id: "community-guidelines",
@@ -136,9 +137,6 @@ const TermsConditions = () => {
                 <li key={item.id}>
                   <button
                     onClick={() => {
-                      document
-                        .getElementById(item.id)
-                        ?.scrollIntoView({ behavior: "smooth" });
                       setActiveSection(item.id);
                       setSidebarOpen(false);
                     }}
@@ -167,15 +165,48 @@ const TermsConditions = () => {
         {/* Main Content */}
         <div className="flex-1 lg:ml-0">
           <div className="max-w-4xl mx-auto p-6 lg:p-8">
-            {/* Single Content Div with All Sections */}
+            {/* Content Display - Show All or Filtered */}
             <div className="bg-white rounded-lg shadow-sm p-8">
-              <div className="prose prose-lg max-w-none space-y-12">
-                {navigationItems.map((item) => (
-                  <div key={item.id} id={item.id}>
+              <div className="prose prose-lg max-w-none">
+                {activeSection === "all" ? (
+                  // Show all topics
+                  <div className="space-y-12">
+                    {navigationItems.filter(item => item.id !== "all").map((item) => (
+                      <div key={item.id} id={item.id}>
+                        <h2 className="text-lg font-bold font-manrope text-[#0A0A0A] mb-4">
+                          {sections[item.id]?.title || item.label}
+                        </h2>
+                        {sections[item.id]?.content.map((paragraph, index) => (
+                          <div key={index} className="mb-4">
+                            {paragraph === "" ? (
+                              <div className="h-4"></div>
+                            ) : (
+                              <p className="text-[#525252] font-manrope font-medium text-sm leading-relaxed">
+                                {paragraph}
+                              </p>
+                            )}
+                          </div>
+                        ))}
+                        
+                        {/* Special case for Contact Us section */}
+                        {item.id === 'contact-us' && sections[item.id]?.email && (
+                          <div className="mb-4">
+                            <p className="text-[#F39770] font-manrope font-medium text-sm leading-relaxed">
+                              <span className="font-bold"> </span>
+                              {sections[item.id].email}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  // Show only active section
+                  <div key={activeSection} id={activeSection}>
                     <h2 className="text-lg font-bold font-manrope text-[#0A0A0A] mb-4">
-                      {sections[item.id]?.title || item.label}
+                      {sections[activeSection]?.title || navigationItems.find(item => item.id === activeSection)?.label}
                     </h2>
-                    {sections[item.id]?.content.map((paragraph, index) => (
+                    {sections[activeSection]?.content.map((paragraph, index) => (
                       <div key={index} className="mb-4">
                         {paragraph === "" ? (
                           <div className="h-4"></div>
@@ -188,16 +219,16 @@ const TermsConditions = () => {
                     ))}
                     
                     {/* Special case for Contact Us section */}
-                    {item.id === 'contact-us' && sections[item.id]?.email && (
+                    {activeSection === 'contact-us' && sections[activeSection]?.email && (
                       <div className="mb-4">
                         <p className="text-[#F39770] font-manrope font-medium text-sm leading-relaxed">
                           <span className="font-bold"> </span>
-                          {sections[item.id].email}
+                          {sections[activeSection].email}
                         </p>
                       </div>
                     )}
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
