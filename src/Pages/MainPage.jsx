@@ -1,13 +1,13 @@
 import React from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
-import MySunshineLanding from '../Components/Main/MySunshineLanding'
+import MySunlightLanding from '../Components/Main/MySunshineLanding'
 function MainPage() {
   return (
    <>
    <div className="min-h-screen bg-custom-page-gradient">
       <Header />
-      <MySunshineLanding />
+      <MySunlightLanding />
       <Footer />
    </div>
    </>

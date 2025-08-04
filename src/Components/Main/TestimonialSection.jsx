@@ -5,7 +5,7 @@ const TestimonialSection = () => {
   const testimonials = [
     {
       id: 1,
-      quote: "I didn't know how to grieve until I found MySunshine. It felt like someone truly understood.",
+      quote: "I didn't know how to grieve until I found MySunlight. It felt like someone truly understood.",
       name: "Jaime Richard",
       role: "Designer at Oracle"
     },

@@ -40,7 +40,7 @@ const TermsConditions = () => {
     "use-of-app": {
       title: "Use of the App",
       content: [
-        "MySunshine is designed for individuals seeking emotional support during grief. You agree to use the app respectfully and only for personal, non-commercial purposes.",
+        "MySunlight is designed for individuals seeking emotional support during grief. You agree to use the app respectfully and only for personal, non-commercial purposes.",
       ],
     },
     "policy-terms": {
@@ -58,7 +58,7 @@ const TermsConditions = () => {
     "professional-support": {
       title: "Professional Support Disclaimer",
       content: [
-        "MySunshine does not replace professional therapy. While we connect you to licensed providers, all decisions and outcomes from those services are solely between you and the provider.",
+        "MySunlight does not replace professional therapy. While we connect you to licensed providers, all decisions and outcomes from those services are solely between you and the provider.",
       ],
     },
     "account-access": {
@@ -76,7 +76,7 @@ const TermsConditions = () => {
     "limitation-liability": {
       title: "Limitation of Liability",
       content: [
-        "We are not liable for any emotional or psychological distress experienced while using the app. MySunshine is a supportive tool, not a medical device.",
+        "We are not liable for any emotional or psychological distress experienced while using the app. MySunlight is a supportive tool, not a medical device.",
       ],
     },
     "change-terms": {
@@ -90,7 +90,7 @@ const TermsConditions = () => {
       content: [
         "For questions, feedback, or concerns, reach out at:",
       ],
-      email: "support@mysunshine.app",
+      email: "support@mysunlight.app",
     },
   };
 

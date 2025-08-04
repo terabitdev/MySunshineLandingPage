@@ -4,7 +4,7 @@ import FeaturesSection from "./FeaturesSection";
 import EmpatheticDesignSection from "./EmpatheticDesignSection";
 import TestimonialSection from "./TestimonialSection";
 
-const MySunshineLanding = () => {
+const MySunlightLanding = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -16,7 +16,7 @@ const MySunshineLanding = () => {
       <div className="container mx-auto px-6 pt-8 pb-12">
         <div className="text-center mb-8 2xl:mt-20">
           <h1 className="text-4xl md:text-6xl font-medium font-david-libre text-primaryDark mb-4">
-            MySunshine - Helping You
+            MySunlight - Helping You
             <br />
             Heal, One Day at a Time
           </h1>
@@ -38,7 +38,7 @@ const MySunshineLanding = () => {
                     The Story Behind
                   </h2>
                   <h3 className="text-2xl md:text-3xl font-extrabold text-[#F39770] mb-4">
-                    MySunshine
+                    MySunlight
                   </h3>
                   <p className="text-3xl font-semibold text-primaryDark mb-6">
                     Inspired by Personal Loss
@@ -47,7 +47,7 @@ const MySunshineLanding = () => {
 
                 <div className="mb-8 ">
                   <p className="text-primaryDark text-lg font-medium leading-relaxed mb-4">
-                    <span className="font-bold">MySunshine</span> is dedicated
+                    <span className="font-bold">MySunlight</span> is dedicated
                     to my wife, Meredith, who lost her brother Michael. On the
                     day of his funeral, she said the sun way to survive. Ever
                     since, whenever we see the sun shining, it feels like
@@ -168,4 +168,4 @@ const MySunshineLanding = () => {
   );
 };
 
-export default MySunshineLanding;
+export default MySunlightLanding;

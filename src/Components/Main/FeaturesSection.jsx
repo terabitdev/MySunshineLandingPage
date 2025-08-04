@@ -4,7 +4,7 @@ const FeaturesSection = () => {
   const features = [
     {
       id: 1,
-      title: "Daily Sunshine",
+      title: "Daily Sunlight",
       description: "Personalized daily quotes based on user's mood",
       icon: "/assets/features/1.svg",
       bgColor: "bg-[#F8F2E1]",
