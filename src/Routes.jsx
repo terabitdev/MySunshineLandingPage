@@ -4,6 +4,7 @@ import MainPage from "./Pages/MainPage";
 import ArticlesPage from "./Pages/ArticlesPage";
 import ArticleDetails from "./Components/Articles/ArticleDetails";
 import TermsConditions from "./Pages/TermsConditions";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import ScrollToTop from "./Components/ScrollToTop";
 
 const ProjectRoutes = () => {
@@ -23,6 +24,10 @@ const ProjectRoutes = () => {
     {
       path: "/terms-conditions",
       element: <TermsConditions />,
+    },
+    {
+      path: "/privacy-policy",
+      element: <PrivacyPolicy />,
     }
   ]);
   

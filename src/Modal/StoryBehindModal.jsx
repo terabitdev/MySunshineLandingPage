@@ -28,7 +28,7 @@ function StoryBehindModal({ isOpen, onClose }) {
           <div className="max-w-5xl mx-auto">
             {/* Title */}
             <h2 className="text-4xl md:text-5xl font-extrabold font-manrope text-primaryDark mb-6">
-              The Story Behind{" "}
+              The Story Behind
               <span className="text-[#F39770]">MySunlight</span>
             </h2>
 
@@ -38,47 +38,23 @@ function StoryBehindModal({ isOpen, onClose }) {
             </h3>
 
             {/* Story Content */}
-            <div className="prose prose-lg max-w-none">
+            <div className="max-w-lg">
               <p className="text-primaryDark font-manrope leading-relaxed mb-6">
-                MySunlight is dedicated to my wife, Khushboo, who lost her
-                brother Puneet. On the day of his funeral, a cloudy sky gave way
-                to sunshine. Ever since, whenever we see the sun shining, it
-                feels like Puneet's reminder of hope.
+                MySunlight is a dedication to my wife, Khushboo, who lost her
+                younger brother in late 2022.
               </p>
 
-              <p className="text-primaryDark font-manrope font-bold leading-relaxed mb-6">
-                MySunlight is dedicated to my wife, Khushboo, who lost her
-                brother Puneet. On the day of his funeral, a cloudy sky gave way
-                to sunshine. Ever since, whenever we see the sun shining, it
-                feels like Puneet's reminder of hope.
-              </p>
-
-              <p className="text-primaryDark font-manrope leading-relaxed mb-6">
-                MySunlight is dedicated to my wife, Khushboo, who lost her
-                brother Puneet. On the day of his funeral, a cloudy sky gave way
-                to sunshine. Ever since, whenever we see the sun shining, it
-                feels like Puneet's reminder of hope.MySunlight is dedicated to
-                my wife, Khushboo, who lost her brother Puneet. On the day of
-                his funeral, a cloudy sky gave way to sunshine. Ever since,
-                whenever we see the sun shining, it feels like Puneet’s reminder
-                of hope.MySunlight is dedicated to my wife, Khushboo, who lost
-                her brother Puneet. On the day of his funeral, a cloudy sky gave
-                way to sunshine. Ever since, whenever we see the sun shining, it
-                feels like Puneet’s reminder of hope.{" "}
+              <p className="text-primaryDark font-manrope  leading-relaxed mb-6">
+                I watched as she navigated her grief - surround by so many, yet
+                still feeling so alone. On the day of the funeral, we walked
+                outside and watched as rain and clouds parted, giving way to
+                sunshine.
               </p>
 
               <p className="text-primaryDark font-manrope leading-relaxed mb-6">
-                MySunlight is dedicated to my wife, Khushboo, who lost her
-                brother Puneet. On the day of his funeral, a cloudy sky gave way
-                to sunshin. Ever since, whenever we see the sun shining, it
-                feels like Puneet's reminder of hope.MySunlight is dedicated to
-                my wife, Khushboo, who lost her brother Puneet. On the day of
-                his funeral, a cloudy sky gave way to sunshin. Ever since,
-                whenever we see the sun shining, it feels like Puneet’s reminder
-                of hope.MySunlight is dedicated to my wife, Khushboo, who lost
-                her brother Puneet. On the day of his funeral, a cloudy sky gave
-                way to sunshin. Ever since, whenever we see the sun shining, it
-                feels like Puneet’s reminder of hope.{" "}
+                That moment became our anchor for hope - that better days were
+                ahead. MySunlight was created to help others find their light,
+                too.
               </p>
             </div>
           </div>
