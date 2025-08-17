@@ -13,16 +13,16 @@ const MySunlightLanding = () => {
   return (
     <div>
       {/* Header Section */}
-      <div className="container mx-auto px-6 pt-8 pb-12">
+      <div className="container mx-auto px-6 pt-28 sm:pt-8 pb-12">
         <div className="text-center mb-14 2xl:mt-20">
 
           <div className="flex items-center justify-center  cursor-pointer mb-5">
               <img
                 src="/assets/navbarlogo.svg"
                 alt="MySunlight Logo"
-                className="h-24 w-24 mr-4"
+                className=" h-16 w-16 sm:h-24 sm:w-24 mr-4"
               />
-              <span className="text-7xl font-david-libre font-bold text-primaryDark">MySunlight</span>
+              <span className=" text-4xl sm:text-7xl font-david-libre font-bold text-primaryDark">MySunlight</span>
             </div>
 
           <h1 className="text-xl md:text-4xl font-medium font-david-libre text-[#F39770] mb-4">
