@@ -3,7 +3,7 @@ import ArticleListing from './ArticleListing'
 const AllArticles = () => {
   return (
     <div className="min-h-screen ">
-    <div className="text-center md:mb-10 mt-8 md:mt-2 2xl:mt-28">
+    <div className="text-center md:mb-10 mt-20 md:mt-28 2xl:mt-28">
       <h1 className="text-4xl md:text-6xl font-medium font-david-libre text-primaryDark mb-4">
         Get Help
       </h1>

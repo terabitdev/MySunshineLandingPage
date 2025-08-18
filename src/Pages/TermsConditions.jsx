@@ -90,7 +90,7 @@ const TermsConditions = () => {
       content: [
         "For questions, feedback, or concerns, reach out at:",
       ],
-      email: "support@mysunlight.app",
+      email: "support@mysunlight.com",
     },
   };
 
@@ -99,30 +99,14 @@ const TermsConditions = () => {
   return (
     <div className="min-h-screen bg-custom-page-gradient">
       <Header />
-      <div className="text-center mt-10 md:mt-0 2xl:mt-28 ">
+      <div className="text-center mt-20 md:mt-24 2xl:mt-28 ">
         <h1 className="text-4xl md:text-6xl font-medium font-david-libre text-primaryDark ">
           Terms & Conditions
         </h1>
       </div>
       <div className="flex">
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-          className="lg:hidden fixed top-4 left-4 z-50 bg-white p-2 rounded-lg shadow-md"
-        >
-          {sidebarOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
-        </button>
-
         {/* Sidebar */}
-        <div
-          className={`${
-            sidebarOpen ? "translate-x-0" : "-translate-x-full"
-          } lg:translate-x-0 fixed lg:relative inset-y-0 left-0 z-40 w-80 bg-white lg:bg-transparent shadow-lg lg:shadow-none`}
-        >
+        <div className="hidden lg:block lg:relative inset-y-0 left-0 z-40 w-80 bg-white lg:bg-transparent shadow-lg lg:shadow-none">
           {/* Sidebar Header */}
           <div className="pl-14 pt-10 ">
             <h1 className="text-sm font-inter-tight font-medium text-primaryDark">
@@ -153,14 +137,6 @@ const TermsConditions = () => {
             </ul>
           </nav>
         </div>
-
-        {/* Mobile Overlay */}
-        {sidebarOpen && (
-          <div
-            className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
-            onClick={() => setSidebarOpen(false)}
-          />
-        )}
 
         {/* Main Content */}
         <div className="flex-1 lg:ml-0">

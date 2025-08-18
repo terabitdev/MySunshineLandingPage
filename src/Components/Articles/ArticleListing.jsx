@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Search, Filter } from 'lucide-react';
+import { Search, SlidersHorizontal } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa6";
 const ArticleListing = () => {
   const [activeFilter, setActiveFilter] = useState('All Articles');
   const [showAll, setShowAll] = useState(false);
+  const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false);
+  const [filterButtonRect, setFilterButtonRect] = useState(null);
   const navigate = useNavigate();
 
   const articles = [
@@ -14,7 +16,7 @@ const ArticleListing = () => {
       description: "This article explores the many different grief we all face, reminding readers that there's no proper or wrong way of grieving loss.",
       image: "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=400&h=250&fit=crop",
       caption: "Loved one Loss",
-      category: "Gentle"
+      category: "Loss of a loved one'"
     },
     {
       id: 2,
@@ -22,7 +24,7 @@ const ArticleListing = () => {
       description: "This article explores the many different grief we all face, reminding readers that there's no proper or wrong way of grieving loss.",
       image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=250&fit=crop",
       caption: "Loved one Loss",
-      category: "Supportive"
+      category: "Infertility"
     },
     {
       id: 3,
@@ -30,7 +32,7 @@ const ArticleListing = () => {
       description: "This article discusses the many different grief we all face, reminding readers that there's no proper or wrong way of grieving loss.",
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop",
       caption: "Loved one Loss",
-      category: "Wellness"
+      category: "Job loss or career setback"
     },
     {
       id: 4,
@@ -38,7 +40,7 @@ const ArticleListing = () => {
       description: "This article discusses the many different grief we all face, reminding readers that there's no proper or wrong way of grieving loss.",
       image: "https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=400&h=250&fit=crop",
       caption: "Loved one Loss",
-      category: "Mindfulness"
+      category: "Relationship breakup or divorce"
     },
     {
       id: 5,
@@ -46,7 +48,7 @@ const ArticleListing = () => {
       description: "This article discusses the many different grief we all face, reminding readers that there's no proper or wrong way of grieving loss.",
       image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=250&fit=crop",
       caption: "Loved one Loss",
-      category: "Self-Care"
+      category: "Open topic"
     },
     {
       id: 6,
@@ -54,7 +56,7 @@ const ArticleListing = () => {
       description: "This article discusses the many different grief we all face, reminding readers that there's no proper or wrong way of grieving loss.",
       image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400&h=250&fit=crop",
       caption: "Loved one Loss",
-      category: "Zero-judgment"
+      category: "Open topic"
     },
     {
       id: 7,
@@ -62,7 +64,7 @@ const ArticleListing = () => {
       description: "This article discusses the many different grief we all face, reminding readers that there's no proper or wrong way of grieving loss.",
       image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400&h=250&fit=crop",
       caption: "Loved one Loss",
-      category: "Zero judgment"
+      category: "Open topic"
     },
     {
       id: 8,
@@ -70,11 +72,11 @@ const ArticleListing = () => {
       description: "This article discusses the many different grief we all face, reminding readers that there's no proper or wrong way of grieving loss.",
       image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=400&h=250&fit=crop",
       caption: "Loved one Loss",
-      category: "Human-first"
+      category: "Open topic"
     }
   ];
 
-  const filterButtons = ['All Articles', 'Gentle', 'Supportive', 'Human-first', 'Zero judgment '];
+  const filterButtons = ['All Articles', 'Loss of a loved one', 'Infertility', 'Job loss or career setback', 'Relationship breakup or divorce', 'Open topic'];
 
   const filteredArticles = activeFilter === 'All Articles' 
     ? articles 
@@ -90,7 +92,7 @@ const ArticleListing = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-8">
-          <h1 className="text-4xl font-semibold font-inter-tight text-[#0A0A0A] mb-4">
+          <h1 className=" text-3xl sm:text-4xl font-semibold font-inter-tight text-[#0A0A0A] mb-4">
             All Articles
           </h1>
           <p className="text-[#737373] font-normal text-sm font-inter-tight mb-6 max-w-[35rem]">
@@ -100,18 +102,32 @@ const ArticleListing = () => {
           </p>
 
           {/* Search and Filter Bar */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-            <div className="relative flex-1 ">
+          <div className="flex gap-8 mb-6">
+            <div className="relative flex-1 max-w-sm sm:max-w-xs">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#A3A3A3] w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search articles..."
-                className="w-full pl-10 pr-4 py-2 border placeholder-[#A3A3A3] font-inter-tight border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-12 py-2 border placeholder-[#A3A3A3] font-inter-tight border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
+              
+              {/* Filter Icon - Mobile (inside search bar) */}
+              <div className="md:hidden absolute right-3 top-1/2 transform -translate-y-1/2">
+                <button
+                  onClick={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    setFilterButtonRect(rect);
+                    setIsFilterDropdownOpen(!isFilterDropdownOpen);
+                  }}
+                  className="p-1 bg-[#F39770] rounded-md"
+                >
+                  <SlidersHorizontal className="w-5 h-5 text-white" />
+                </button>
+              </div>
             </div>
 
-            {/* Filter Buttons */}
-            <div className="flex flex-wrap gap-2 ">
+            {/* Filter Buttons - Desktop */}
+            <div className="hidden md:flex gap-2 max-w-5xl ">
               {filterButtons.map((filter) => (
                 <button
                   key={filter}
@@ -229,6 +245,45 @@ const ArticleListing = () => {
             View More 
           </button>
         </div>
+
+        {/* Mobile Filter Dropdown - Fixed Position */}
+        {isFilterDropdownOpen && filterButtonRect && (
+          <>
+            {/* Backdrop */}
+            <div 
+              className="fixed inset-0 bg-black bg-opacity-25 z-[9999]"
+              onClick={() => setIsFilterDropdownOpen(false)}
+            />
+            
+            {/* Dropdown Menu */}
+            <div 
+              className="fixed w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-[10000]"
+              style={{
+                top: filterButtonRect.bottom + 8,
+                right: window.innerWidth - filterButtonRect.right,
+              }}
+            >
+              <div className="p-2">
+                {filterButtons.map((filter) => (
+                  <button
+                    key={filter}
+                    onClick={() => {
+                      setActiveFilter(filter);
+                      setIsFilterDropdownOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium font-inter-tight mb-1 ${
+                      activeFilter === filter
+                        ? "bg-[#4B7C6C26] text-[#0A0A0A] border border-[#4B7C6C]"
+                        : "bg-white text-[#737373] hover:bg-gray-50"
+                    }`}
+                  >
+                    {filter}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

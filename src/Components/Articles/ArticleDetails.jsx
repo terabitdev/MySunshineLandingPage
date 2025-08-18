@@ -37,7 +37,7 @@ const ArticleDetail = () => {
       <Header />
       {/* Navigation Breadcrumb */}
       <div className="border-b border-gray-200 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 sm:mt-12">
           <div 
             onClick={() => {
               navigate('/articles');

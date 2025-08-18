@@ -5,6 +5,7 @@ import ArticlesPage from "./Pages/ArticlesPage";
 import ArticleDetails from "./Components/Articles/ArticleDetails";
 import TermsConditions from "./Pages/TermsConditions";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import AboutUs from "./Pages/AboutUs";
 import ScrollToTop from "./Components/ScrollToTop";
 
 const ProjectRoutes = () => {
@@ -20,6 +21,10 @@ const ProjectRoutes = () => {
     {
       path: "/article-details",
       element: <ArticleDetails />,
+    },
+    {
+      path: "/about",
+      element: <AboutUs />,
     },
     {
       path: "/terms-conditions",

@@ -78,16 +78,14 @@ const ResourcesSection = () => {
   const visibleResources = resources.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div className="py-16">
+    <div className="pb-12">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-david-libre font-bold text-primaryDark mb-4">
             Resources
           </h2>
-          <p className="text-gray-600 font-manrope text-lg max-w-2xl mx-auto">
-            Explore our curated collection of articles, guides, and tools designed to support your mental health journey.
-          </p>
+         
         </div>
 
         {/* Mobile Carousel View */}
