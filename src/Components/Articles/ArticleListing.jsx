@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, SlidersHorizontal } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa6";
@@ -8,6 +8,31 @@ const ArticleListing = () => {
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false);
   const [filterButtonRect, setFilterButtonRect] = useState(null);
   const navigate = useNavigate();
+
+  // Handle window resize and scroll to close dropdown and reset positioning
+  useEffect(() => {
+    const handleResize = () => {
+      if (isFilterDropdownOpen) {
+        setIsFilterDropdownOpen(false);
+        setFilterButtonRect(null);
+      }
+    };
+
+    const handleScroll = () => {
+      if (isFilterDropdownOpen) {
+        setIsFilterDropdownOpen(false);
+        setFilterButtonRect(null);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isFilterDropdownOpen]);
 
   const articles = [
     {
@@ -115,11 +140,25 @@ const ArticleListing = () => {
               <div className="md:hidden absolute right-3 top-1/2 transform -translate-y-1/2">
                 <button
                   onClick={(e) => {
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    setFilterButtonRect(rect);
-                    setIsFilterDropdownOpen(!isFilterDropdownOpen);
+                    if (isFilterDropdownOpen) {
+                      setIsFilterDropdownOpen(false);
+                      setFilterButtonRect(null);
+                    } else {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      // Add a small delay to ensure accurate positioning
+                      setTimeout(() => {
+                        setFilterButtonRect(rect);
+                        setIsFilterDropdownOpen(true);
+                      }, 10);
+                    }
                   }}
-                  className="p-1 bg-[#F39770] rounded-md"
+                  className={`p-1 rounded-md transition-colors ${
+                    isFilterDropdownOpen 
+                      ? 'bg-[#4B7C6C]' 
+                      : activeFilter !== 'All Articles' 
+                        ? 'bg-[#4B7C6C]' 
+                        : 'bg-[#F39770]'
+                  }`}
                 >
                   <SlidersHorizontal className="w-5 h-5 text-white" />
                 </button>
@@ -252,15 +291,21 @@ const ArticleListing = () => {
             {/* Backdrop */}
             <div 
               className="fixed inset-0 bg-black bg-opacity-25 z-[9999]"
-              onClick={() => setIsFilterDropdownOpen(false)}
+              onClick={() => {
+                setIsFilterDropdownOpen(false);
+                setFilterButtonRect(null);
+              }}
             />
             
             {/* Dropdown Menu */}
             <div 
-              className="fixed w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-[10000]"
+              className="fixed w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-[10000] max-h-80 overflow-y-auto"
               style={{
-                top: filterButtonRect.bottom + 8,
-                right: window.innerWidth - filterButtonRect.right,
+                top: filterButtonRect.bottom + 8 > window.innerHeight - 300 
+                  ? Math.max(16, filterButtonRect.top - 300) 
+                  : filterButtonRect.bottom + 8,
+                left: Math.max(16, Math.min(filterButtonRect.left, window.innerWidth - 272)),
+                right: 'auto'
               }}
             >
               <div className="p-2">
